@@ -86,4 +86,20 @@ class DioHelper {
       return null;
     }
   }
+
+  //MULTIPART POST
+  Future<dynamic> multipartPost(
+      {required String url,
+      required Object requestBody,
+      bool isAuthRequired = false}) async {
+    Options options = Options(headers: {"Content-Type": "multipart/form-data"});
+    try {
+      Response response;
+      response = await dio.post(url, data: requestBody, options: options);
+      return response.data;
+    } catch (error) {
+      debugPrint("ERR $error");
+      return null;
+    }
+  }
 }

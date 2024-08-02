@@ -1,3 +1,4 @@
+import 'package:dio_explained/src/configs/routes.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -10,6 +11,9 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    Future.delayed(const Duration(seconds: 2)).then((value) {
+      Navigator.pushNamed(context, AppRoutes.homeScreen);
+    });
     super.initState();
   }
 
