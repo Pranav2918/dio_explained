@@ -1,3 +1,5 @@
+import 'package:dio_explained/src/configs/route_handler.dart';
+import 'package:dio_explained/src/configs/routes.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +17,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
         useMaterial3: true,
       ),
-      home: const Placeholder(),
+      initialRoute: AppRoutes.splashScreen,
+      onGenerateRoute: AppRouteHandler.onGenerateRoute,
     );
   }
 }
